@@ -73,22 +73,67 @@
 // animal = employee;//Error
 
 //protected修饰符
-class Person{
-    protected name:string
-    constructor(name:string){this.name = name;}
-}
-class Employee extends Person {
-    private department: string;
+// class Person{
+//     protected name:string
+//     constructor(name:string){this.name = name;}
+// }
+// class Employee extends Person {
+//     private department: string;
 
-    constructor(name: string, department: string) {
-        super(name)
-        this.department = department;
-    }
+//     constructor(name: string, department: string) {
+//         super(name)
+//         this.department = department;
+//     }
 
-    public getElevatorPitch() {
-        return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+//     public getElevatorPitch() {
+//         return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+//     }
+// }
+// let howard = new Employee("Howard", "Sales");
+// console.log(howard.getElevatorPitch());
+// //console.log(howard.name); 错误
+
+//readonly修饰符
+// class Octopus{
+//     readonly name:string
+//     readonly age:number = 20;
+//     constructor(theName:string){
+//         this.name = theName
+//     }
+// }
+// let dad = new Octopus('Man with the 8 strong legs');
+//dad.name = 'zs'; name 是只读属性
+
+//存取器
+// let passcode = "secret passcode";
+
+// class Employee {
+//     private _fullName: string;
+
+//     get fullName(): string {
+//         return this._fullName;
+//     }
+
+//     set fullName(newName: string) {
+//         if (passcode && passcode == "secret passcode") {
+//             this._fullName = newName;
+//         }
+//         else {
+//             console.log("Error: Unauthorized update of employee!");
+//         }
+//     }
+// }
+
+// let employee = new Employee();
+// employee.fullName = "Bob Smith";
+// if (employee.fullName) {
+//     alert(employee.fullName);
+// }
+
+//抽象类
+abstract class Animal{
+    abstract makesound():void;
+    move():void{
+        console.log('roaming the earch...')
     }
 }
-let howard = new Employee("Howard", "Sales");
-console.log(howard.getElevatorPitch());
-//console.log(howard.name); 错误

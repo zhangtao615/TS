@@ -9,19 +9,6 @@
 //     }
 // }
 // let greeter = new Greeter("world");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 //继承
 // class Animal{
 //     move(distance:number = 0){
@@ -80,24 +67,60 @@ var __extends = (this && this.__extends) || (function () {
 // let employee = new Employee("Bob");
 // animal = employee;//Error
 //protected修饰符
-var Person = /** @class */ (function () {
-    function Person(name) {
-        this.name = name;
+// class Person{
+//     protected name:string
+//     constructor(name:string){this.name = name;}
+// }
+// class Employee extends Person {
+//     private department: string;
+//     constructor(name: string, department: string) {
+//         super(name)
+//         this.department = department;
+//     }
+//     public getElevatorPitch() {
+//         return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+//     }
+// }
+// let howard = new Employee("Howard", "Sales");
+// console.log(howard.getElevatorPitch());
+// //console.log(howard.name); 错误
+//readonly修饰符
+// class Octopus{
+//     readonly name:string
+//     readonly age:number = 20;
+//     constructor(theName:string){
+//         this.name = theName
+//     }
+// }
+// let dad = new Octopus('Man with the 8 strong legs');
+//dad.name = 'zs'; name 是只读属性
+//存取器
+// let passcode = "secret passcode";
+// class Employee {
+//     private _fullName: string;
+//     get fullName(): string {
+//         return this._fullName;
+//     }
+//     set fullName(newName: string) {
+//         if (passcode && passcode == "secret passcode") {
+//             this._fullName = newName;
+//         }
+//         else {
+//             console.log("Error: Unauthorized update of employee!");
+//         }
+//     }
+// }
+// let employee = new Employee();
+// employee.fullName = "Bob Smith";
+// if (employee.fullName) {
+//     alert(employee.fullName);
+// }
+//抽象类
+var Animal = /** @class */ (function () {
+    function Animal() {
     }
-    return Person;
-}());
-var Employee = /** @class */ (function (_super) {
-    __extends(Employee, _super);
-    function Employee(name, department) {
-        var _this = _super.call(this, name) || this;
-        _this.department = department;
-        return _this;
-    }
-    Employee.prototype.getElevatorPitch = function () {
-        return "Hello, my name is " + this.name + " and I work in " + this.department + ".";
+    Animal.prototype.move = function () {
+        console.log('roaming the earch...');
     };
-    return Employee;
-}(Person));
-var howard = new Employee("Howard", "Sales");
-console.log(howard.getElevatorPitch());
-console.log(howard.name); //错误
+    return Animal;
+}());

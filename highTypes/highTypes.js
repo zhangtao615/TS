@@ -26,3 +26,13 @@
 // let n = jim.name;
 // jim.log();
 //联合类型
+function padLeft(value, padding) {
+    if (typeof padding === 'number') {
+        return Array(padding + 1).join(' ') + value;
+    }
+    else if (typeof value === 'string') {
+        return value + padding;
+    }
+    throw new Error("Expected string or number, got '" + padding + "'.");
+}
+padLeft("hello world!", 4);

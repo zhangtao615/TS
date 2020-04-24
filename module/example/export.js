@@ -1,3 +1,4 @@
+"use strict";
 // interface StringValidator {
 //     isAcceptable(s: string): boolean;
 // }
@@ -8,5 +9,5 @@
 //     }
 // }
 // export = ZipCodeValidator; //"export = " 为了兼容CommonJS和AMD的exports
-
-export default "123";
+exports.__esModule = true;
+exports["default"] = "123";

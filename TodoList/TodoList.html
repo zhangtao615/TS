@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="serch">
+            <input type="text" placeholder="搜索"><input type="button" value="搜索">
+        </div>
+        <div>
+            <input type="text" placeholder="名称">
+            <input type="text" placeholder="价格">
+            <input type="button" value="添加"></br>
+            <input type="checkbox" name="checkAll">全选
+        </div>
+        <table>
+            <thead>
+                <th>选择</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="check"></td>
+                    <td>裤子</td>
+                    <td>100</td>
+                    <td><input type="button" value="删除"></td>
+                </tr>
+                <tr>
+                    <td><button>删除选中</button></td>
+                    <td colspan="3">价格：0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src=""></script>
+</body>
+
+</html>
